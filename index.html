@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labirinto - Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labirinto com Movimentação</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Teste</h1>
-    <p>Teste teste teste teste</p>
-    <P>aÇLTERAÇÃO FEITA POR DUDUZIN GAMEPLAY</P>
+  <div id="start-screen">
+    <h1>Labirinto com Movimentação</h1>
+    <button id="start-button">Iniciar Jogo</button>
+  </div>
+
+  <div id="game-screen" style="display: none;">
+    <div id="maze"></div>
+  </div>
+
+  <div id="end-screen" style="display: none;">
+    <h2>Parabéns! Você completou todas as fases!</h2>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
