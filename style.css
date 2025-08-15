@@ -1,0 +1,41 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  #maze {
+    display: grid;
+    grid-template-columns: repeat(20, 25px);
+    grid-template-rows: repeat(20, 25px);
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .cell {
+    width: 25px;
+    height: 25px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
+  
+  .wall {
+    background-color: black;
+  }
+  
+  .path {
+    background-color: white;
+  }
+  
+  .player {
+    background-color: blue;
+  }
+  
+  .goal {
+    background-color: green;
+  }
+  
