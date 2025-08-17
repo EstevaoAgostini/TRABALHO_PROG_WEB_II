@@ -1,41 +1,51 @@
-/* style.css */
-
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
+    background: #f5f5f5;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-  }
-  
-  #maze {
+}
+
+.tela {
+    display: none;
+    padding: 20px;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+#labirinto {
     display: grid;
     grid-template-columns: repeat(20, 25px);
     grid-template-rows: repeat(20, 25px);
     justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .cell {
+    margin: 20px auto;
+    gap: 1px;
+}
+
+#exibeFase {
+    font-weight: bold;
+}
+
+.celula {
     width: 25px;
     height: 25px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-  }
-  
-  .wall {
-    background-color: black;
-  }
-  
-  .path {
-    background-color: white;
-  }
-  
-  .player {
-    background-color: blue;
-  }
-  
-  .goal {
-    background-color: green;
-  }
-  
+    border-radius: 4px;
+}
+
+.parede {
+    background: #333;
+}
+
+.livre {
+    background: #eee;
+}
+
+.jogador {
+    background: blue;
+}
+
+.saida {
+    background: green;
+}
