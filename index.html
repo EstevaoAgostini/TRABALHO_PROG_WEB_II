@@ -1,25 +1,49 @@
-
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Labirinto com Movimentação</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body{
+            background: linear-gradient(to right,#82DEDB,#9FC1E4)
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+        }
+        h3{
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+        }
+        button{
+            padding: 10px;
+            margin: 5px;
+            background-color: #f0f9f9;
+            border-radius: 7px;
+            border-color: #E7F7F7;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .button{
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-  <div id="start-screen">
-    <h1>Labirinto com Movimentação</h1>
-    <button id="start-button">Iniciar Jogo</button>
-  </div>
-
-  <div id="game-screen" style="display: none;">
-    <div id="maze"></div>
-  </div>
-
-  <div id="end-screen" style="display: none;">
-    <h2>Parabéns! Você completou todas as fases!</h2>
-  </div>
-
-  <script src="script.js"></script>
+    <h2>Meu Jogo Interativo</h2>
+    <h3>Labirinto</h3>
+    <div class="button">
+        <button id="login">Login</button>
+        <button id="cadastro">Cadastro</button>
+        <button id="senha">Recuperar Senha</button>
+        <button id="sobre">Sobre</button>
+    <div>
 </body>
 </html>
