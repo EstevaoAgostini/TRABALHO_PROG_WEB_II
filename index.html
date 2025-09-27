@@ -1,37 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Labirinto - Login</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body{
+            background: linear-gradient(to right,#82DEDB,#9FC1E4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+        }
+        h3{
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+        }
+        button{
+            padding: 10px;
+            margin: 5px;
+            background-color: #f0f9f9;
+            border-radius: 7px;
+            border-color: #E7F7F7;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .button{
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            align-items: center;
+        }
+        .relogio{
+            font-size: 0.9em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Tela de Login -->
-    <div id="telaLogin" class="tela ativa">
-        <h1>Bem-vindo ao Labirinto</h1>
-        <form id="formLogin">
-            <input type="text" id="nomeJogador" placeholder="Digite seu nome" required>
-            <button type="submit">Iniciar Jogo</button>
-        </form>
-    </div>
+    <h2>Meu Jogo Interativo</h2>
+    <h3>Labirinto</h3>
 
-    <!-- Tela do Jogo -->
-    <div id="telaJogo" class="tela">
-        <h2 id="exibeNome"></h2>
-        <p id="exibeFase"></p>
-        <div id="labirinto"></div>
-    </div>
+    <p id="mensagem" class="relogio"></p>
+    <p id="relogio" class="relogio"></p>
+    <div class="button">
+        <button id="login">Login</button>
+        <button id="cadastro">Cadastro</button>
+        <button id="senha">Recuperar Senha</button>
+        <button id="sobre">Sobre</button>
+    <div>
+    <script>
+        const msg = document.getElementById("mensagem");
+        const hora = new Date().getHours();
+        if (hora < 12) msg.textContent = "Bom dia! Seja bem vindo ao jogo!";
+        else if (hora<18) msg.textContent = "Boa Tarde! Seja bem vindo ao jogo!";
+        else msg.textContent = "Boa noite! Seja bem vindo ao jogo!";
 
-    <!-- Tela Final -->
-    <div id="telaFinal" class="tela">
-        <h1>Parabéns!</h1>
-        <p>Você completou todas as fases 🎉</p>
-        <button onclick="location.reload()">Jogar Novamente</button>
-    </div>
-
-    <script src="script.js"></script>
+        function atualizaRelogio(){
+            const agora = new Date();
+            const relogio = document.getElementById("relogio");
+            relogio.textContent = "Horario atual: " + agora.toLocaleTimeString();
+        }
+        setInterval(atualizaRelogio, 1000);
+        atualizaRelogio();
+    </script>
 </body>
-
 </html>
