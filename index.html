@@ -13,20 +13,23 @@
             align-items: center;
         }
         h2{
-            display: flex;
-            justify-content: center;
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-large;
         }
         h3{
-            display: flex;
-            justify-content: center;
             font-family: Arial, Helvetica, sans-serif;
             font-size: x-large;
         }
         a{
             color: black;
             text-decoration: none;
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            background-color: #f0f9f9;
+            border-radius: 7px;
+            border-color: #E7F7F7;
+            font-family: Arial, Helvetica, sans-serif;
         }
         button{
             padding: 10px;
@@ -35,13 +38,6 @@
             border-radius: 7px;
             border-color: #E7F7F7;
             font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .button{
-            display: flex;
-            flex-direction: row;
-            justify-content:center;
-            align-items: center;
         }
         .relogio{
             font-size: 0.9em;
@@ -56,12 +52,10 @@
     <p id="mensagem" class="relogio"></p>
     <p id="relogio" class="relogio"></p>
     <div class="button">
-        <a href="login.html">
-            <button id="login">Login</button>
-        </a>
-        <button id="cadastro">Cadastro</button>
-        <button id="senha">Recuperar Senha</button>
-        <button id="sobre">Sobre</button>
+        <a href="login.html">Login</a>
+        <a>Cadastro</a>
+        <a>Recuperar Senha</a>
+        <a>Sobre</a>
     <div>
     <script>
         const msg = document.getElementById("mensagem");
