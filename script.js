@@ -144,4 +144,16 @@ document.addEventListener("keydown", (e) => {
     else if (e.key === "ArrowRight") moverJogador(0, 1);
 
 });
+document.addEventListener("keydown", (f) => {
+    if (["w", "s", "a", "d"].includes(f.key)) {
+        e.preventDefault();
+    }
+
+    if (e.key === "w") moverJogador(-1, 0);
+    else if (e.key === "s") moverJogador(1, 0);
+    else if (e.key === "a") moverJogador(0, -1);
+    else if (e.key === "d") moverJogador(0, 1);
+
+});
+
 
