@@ -144,17 +144,3 @@ document.addEventListener("keydown", (e) => {
     else if (e.key === "ArrowRight") moverJogador(0, 1);
 
 });
-document.addEventListener("keydown", (f) => {
-    if (["w", "s", "a", "d"].includes(f.key.toLowerCase())) {
-        f.preventDefault();
-    const key = f.key.toLowerCase();
-    if (key === "w") moverJogador(-1, 0);
-    else if (key === "s") moverJogador(1, 0);
-    else if (key === "a") moverJogador(0, -1);
-    else if (key === "d") moverJogador(0, 1);
-}
-);
-
-
-
-
