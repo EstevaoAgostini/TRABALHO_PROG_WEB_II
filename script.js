@@ -134,13 +134,28 @@ function moverJogador(dl, dc) {
 
 //Movimentação
 document.addEventListener("keydown", (e) => {
-    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+    const key = e.key.toLowerCase();
+
+    if (["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d"].includes(key)) {
         e.preventDefault();
+        switch (key) {
+            case "arrowup":
+            case "w":
+                moverJogador(-1, 0);
+                break;
+            case "arrowdown":
+            case "s":
+                moverJogador(1, 0);
+                break;
+            case "arrowleft":
+            case "a":
+                moverJogador(0, -1);
+                break;
+            case "arrowright":
+            case "d":
+                moverJogador(0, 1);
+                break;
+        }
     }
-
-    if (e.key === "ArrowUp") moverJogador(-1, 0);
-    else if (e.key === "ArrowDown") moverJogador(1, 0);
-    else if (e.key === "ArrowLeft") moverJogador(0, -1);
-    else if (e.key === "ArrowRight") moverJogador(0, 1);
-
 });
+
