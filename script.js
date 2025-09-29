@@ -145,16 +145,16 @@ document.addEventListener("keydown", (e) => {
 
 });
 document.addEventListener("keydown", (f) => {
-    if (["w", "s", "a", "d"].includes(f.key)) {
+    if (["w", "s", "a", "d"].includes(f.key.toLowerCase())) {
         f.preventDefault();
-    }
+    const key = f.key.toLowerCase();
+    if (key === "w") moverJogador(-1, 0);
+    else if (key === "s") moverJogador(1, 0);
+    else if (key === "a") moverJogador(0, -1);
+    else if (key === "d") moverJogador(0, 1);
+}
+);
 
-    if (f.key === "w") moverJogador(-1, 0);
-    else if (f.key === "s") moverJogador(1, 0);
-    else if (f.key === "a") moverJogador(0, -1);
-    else if (f.key === "d") moverJogador(0, 1);
-
-});
 
 
 
