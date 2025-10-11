@@ -1,14 +1,22 @@
-<DOCUMENT filename="jogo.html">
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <title>Labirinto</title>
+    <title>Labirinto - Login</title>
     <link rel="stylesheet" href="styleJogo.css">
 </head>
 
 <body>
+    <!-- Tela de Login -->
+    <div id="telaLogin" class="tela ativa">
+        <h1>Bem-vindo ao Labirinto</h1>
+        <form id="formLogin">
+            <input type="text" id="nomeJogador" placeholder="Digite seu nome" required>
+            <button type="submit">Iniciar Jogo</button>
+        </form>
+    </div>
+
     <!-- Tela do Jogo -->
     <div id="telaJogo" class="tela">
         <h2 id="exibeNome"></h2>
@@ -23,8 +31,7 @@
         <button onclick="location.reload()">Jogar Novamente</button>
     </div>
 
-    <script src="js.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
-</DOCUMENT>
