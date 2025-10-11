@@ -73,31 +73,20 @@ const labirintos = [
     ]
 ];
 
-
-//Variáveis
 let faseAtual = 0;
 let posicaoJogador = { linha: 1, coluna: 1 };
-let elementoLabirinto = document.getElementById("labirinto");
+let nomeJogador = "";
 
-//Login
-document.getElementById("formLogin").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const nome = document.getElementById("nomeJogador").value;
-    document.getElementById("exibeNome").textContent = "Jogador: " + nome;
-    mostrarTela("telaJogo");
-    carregarLabirinto();
-});
-
-//Funçoes
-function mostrarTela(idTela) {
-    document.querySelectorAll(".tela").forEach(t => t.classList.remove("ativa"));
-    document.getElementById(idTela).classList.add("ativa");
+function mostrarTela(id) {
+    document.querySelectorAll(".tela").forEach(tela => tela.classList.remove("ativa"));
+    document.getElementById(id).classList.add("ativa");
 }
 
 function carregarLabirinto() {
-    elementoLabirinto.innerHTML = "";
     const lab = labirintos[faseAtual];
-    document.getElementById("exibeFase").textContent = "Labirinto - Fase " + (faseAtual + 1) + " de 3";
+    const elementoLabirinto = document.getElementById("labirinto");
+    elementoLabirinto.innerHTML = "";
+    document.getElementById("exibeFase").innerText = "Fase " + (faseAtual + 1) + " de 3";
 
     for (let l = 0; l < 20; l++) {
         for (let c = 0; c < 20; c++) {
@@ -157,4 +146,17 @@ document.addEventListener("keydown", (e) => {
                 break;
         }
     }
+});
+
+// Iniciar o jogo diretamente após o login
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (!user) {
+        window.location.href = 'login.html';
+        return;
+    }
+    nomeJogador = user.nome;
+    document.getElementById("exibeNome").innerText = `Olá, ${nomeJogador}!`;
+    mostrarTela("telaJogo");
+    carregarLabirinto();
 });
